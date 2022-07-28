@@ -7,12 +7,12 @@ import { Injectable } from '@angular/core';
 export class PokemonService {
 
   public listaPokemon = [];
-  
+
    private url ='https://pokeapi.co/api/v2/';
 
   constructor(private http: HttpClient) { }
 
   buscarTodosPokemon(){
-    return this.http.get(this.url);
+    return this.http.get(`${this.url}pokemon`);
   }
 }
