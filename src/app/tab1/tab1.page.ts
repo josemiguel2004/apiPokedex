@@ -4,16 +4,23 @@ import { PokemonService } from '../services/pokemon.service';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  styleUrls: ['tab1.page.scss'],
 })
-export class Tab1Page implements OnInit{
+export class Tab1Page implements OnInit {
+  total = 0;
+  next = '';
+  previous = '';
+  listaPokemon = [];
 
   constructor(public pokemonService: PokemonService) {}
 
-  ngOnInit(){
-    this.pokemonService.buscarTodosPokemon(). subscribe((dados )=>{
+  ngOnInit() {
+    this.pokemonService.buscarTodosPokemon().subscribe((dados) => {
+      this.total = dados['count'];
+      this.next = dados['next'];
+      this.previous = dados['previous'];
+      this.listaPokemon = dados['results'];
       console.log(dados);
     });
   }
-
 }

@@ -2,17 +2,19 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PokemonService {
-
   public listaPokemon = [];
 
-   private url ='https://pokeapi.co/api/v2/';
+  private url = 'https://pokeapi.co/api/v2/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  buscarTodosPokemon(){
+  buscarTodosPokemon() {
     return this.http.get(`${this.url}pokemon`);
+  }
+  buscarUmPokemon(url: string) {
+    return this.http.get(url);
   }
 }

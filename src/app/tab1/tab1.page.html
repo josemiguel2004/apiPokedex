@@ -1,27 +1,28 @@
 <ion-header [translucent]="true">
-  <ion-toolbar  color="primary">
-    <ion-title>
-      Pokedex Api
-    </ion-title>
+  <ion-toolbar color="primary">
+    <ion-title> Pokedex Api </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
+  <ion-card *ngFor="let pokemon of listaPokemon">
     <ion-card-header>
-      <ion-card-title class="titulo">Bulbasaur</ion-card-title>
+      <ion-card-title class="titulo"
+        >{{pokemon.name | uppercase}}</ion-card-title
+      >
     </ion-card-header>
 
     <ion-card-content>
       <ion-card-subtitle>#001</ion-card-subtitle>
-      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png">
+      <img
+        src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png"
+      />
       <ion-item lines="none">
         <ion-badge slot="start" color="verde-claro">Glass</ion-badge>
-        <ion-badge color="roxo" >Paison</ion-badge>
+        <ion-badge color="roxo">Paison</ion-badge>
       </ion-item>
     </ion-card-content>
   </ion-card>
-
 
   <ion-card>
     <ion-card-header>
@@ -30,13 +31,14 @@
 
     <ion-card-content>
       <ion-card-subtitle>#004</ion-card-subtitle>
-      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png">
+      <img
+        src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png"
+      />
       <ion-item lines="none">
         <ion-badge slot="start" color="fire">Fire</ion-badge>
       </ion-item>
     </ion-card-content>
   </ion-card>
-
 
   <ion-card>
     <ion-card-header>
@@ -45,7 +47,9 @@
 
     <ion-card-content>
       <ion-card-subtitle>#007</ion-card-subtitle>
-      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png">
+      <img
+        src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png"
+      />
       <ion-item lines="none">
         <ion-badge slot="start" color="azul-agua">Water</ion-badge>
       </ion-item>
@@ -59,7 +63,9 @@
 
     <ion-card-content>
       <ion-card-subtitle>#025</ion-card-subtitle>
-      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png">
+      <img
+        src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png"
+      />
       <ion-item lines="none">
         <ion-badge slot="start" color="amarelo">Eletric</ion-badge>
       </ion-item>
