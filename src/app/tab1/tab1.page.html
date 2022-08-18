@@ -5,7 +5,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card *ngFor="let pokemon of listaPokemon">
+  <ion-card
+    *ngFor="let pokemon of listaPokemon"
+    [color]="pokemon.types[0].type.name"
+  >
     <ion-card-header>
       <ion-card-title class="titulo"
         >{{pokemon.name | uppercase}}</ion-card-title
@@ -13,13 +16,14 @@
     </ion-card-header>
 
     <ion-card-content>
-      <ion-card-subtitle>#001</ion-card-subtitle>
+      <ion-card-subtitle>#{{pokemon.id}}</ion-card-subtitle>
       <img
-        src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png"
+        [src]="'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/' +pokemon.id.toString().padStart(3, '0') +'.png'"
       />
       <ion-item lines="none">
-        <ion-badge slot="start" color="verde-claro">Glass</ion-badge>
-        <ion-badge color="roxo">Paison</ion-badge>
+        <ion-badge *ngFor="let type of pokemon.types" [color]="type.type.name"
+          >{{type.type.name}}</ion-badge
+        >
       </ion-item>
     </ion-card-content>
   </ion-card>
